@@ -1,2 +1,2 @@
 #!/bin/bash
-cpp main.c -o c
+cpp 0-main.c -o c
