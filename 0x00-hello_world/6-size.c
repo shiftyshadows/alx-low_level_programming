@@ -16,11 +16,11 @@ int main(void)
 	float afloat;
 
 /* Displays the string inside quotations */
-	printf("Size of a char: %lu byte(s)", sizeof(acharacter));
-	printf("Size of a int: %lu byte(s)", sizeof(ainteger));
-	printf("Size of a long int: %lu byte(s)", sizeof(along));
-	printf("Size of a long long: %lu byte(s)"), sizeof(alonglong);
-	printf("Size of a float: %lu byte(s)"), sizeof(afloat);
+	printf("Size of a char: %lu byte(s)\n", sizeof(acharacter));
+	printf("Size of a int: %lu byte(s)\n", sizeof(ainteger));
+	printf("Size of a long int: %lu byte(s)\n", sizeof(along));
+	printf("Size of a long long: %lu byte(s)\n"), sizeof(alonglong);
+	printf("Size of a float: %lu byte(s)\n"), sizeof(afloat);
 
 	return (0);
 }
