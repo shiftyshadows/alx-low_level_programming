@@ -2,17 +2,19 @@
 #include <time.h>
 #include <stdio.h>
 /**
- *main - Entry point
- * Return: Always 0 (Success)
+ *main - Entry point (Prints output based on the last digit of the number)
+ *Return: Always 0 (Success)
  */
 
 int main(void)
 {
+/*Declaration of variables*/
 	int n;
 
 	srand(time(0));
 	n = rand() - RAND_MAX / 2;
 
+/*Your code goes here*/
 	if ((n % 10) == 0)
 		printf("Last digit of %d is %d and is 0\n", n, n % 10);
 	else if ((n % 10) > 5)
