@@ -1,14 +1,21 @@
-#include <stdio.h>
+#include "main.h"
 
 /**
- *main - Entry Point
- *Return: Always(0) - Success.
+ * print_alphabet - check the code for ALX School students.
+ *
+ * Return: Always 0.
  */
 
-int main(void)
+void print_alphabet(void)
 {
-/*Declaration of variables*/
+	char alp = 'a';
 
-/*Code Logic*/
-	return (0);
+	while (alp <= 'z')
+	{
+		_putchar (alp);
+		alp++;
+
+	}
+	_putchar ('\n');
+
 }
