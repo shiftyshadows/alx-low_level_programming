@@ -1,14 +1,16 @@
-#include <stdio.h>
+#include "main.h"
 
 /**
- *main - Entry Point
- *Return: Always(0) - Success.
+ *_islower - checks for a lowercase character
+ *@c: letter being tested
+ * Return: Always 0
  */
 
-int main(void)
+int _islower(int c)
 {
-/*Declaration of variables*/
 
-/*Code Logic*/
-	return (0);
+	if (c >= 97 && c <= 122)
+		return (1);
+	else
+		return (0);
 }

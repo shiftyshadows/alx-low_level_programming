@@ -1,14 +1,22 @@
-#include <stdio.h>
+#include "main.h"
 
 /**
- *main - Entry Point
- *Return: Always(0) - Success.
+ * print_alphabet_x10 - func
+ *
+ * Return - 0
  */
-
-int main(void)
+void print_alphabet_x10(void)
 {
-/*Declaration of variables*/
-
-/*Code Logic*/
-	return (0);
+int b = 0;
+while (b < 10)
+{
+char a = 'a';
+while (a <= 'z')
+{
+_putchar(a);
+a++;
+}
+_putchar('\n');
+b++;
+}
 }

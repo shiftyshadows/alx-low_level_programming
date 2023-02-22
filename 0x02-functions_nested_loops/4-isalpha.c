@@ -1,14 +1,23 @@
-#include <stdio.h>
+#include "main.h"
 
 /**
- *main - Entry Point
- *Return: Always(0) - Success.
+ * _isalpha - check the code for ALX School students.
+ *
+ * @c: is c an integer argument
+ *
+ * Return: Always 0.
  */
 
-int main(void)
+int _isalpha(int c)
 {
-/*Declaration of variables*/
 
-/*Code Logic*/
+	if (c >= 97 && c <= 122)
+	{
+		return (1);
+	}
+	else if (c >= 65 && c <= 90)
+	{
+		return (1);
+	}
 	return (0);
 }

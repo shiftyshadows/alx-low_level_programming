@@ -1,14 +1,16 @@
-#include <stdio.h>
-
+#include "main.h"
 /**
- *main - Entry Point
- *Return: Always(0) - Success.
+ * _abs - returns absolute value of an int
+ * @n: integer from which to get an absolute value
+ * Return: Void.
  */
 
-int main(void)
+int _abs(int n)
 {
-/*Declaration of variables*/
 
-/*Code Logic*/
-	return (0);
+	if (n < 0)
+	{
+		return (n * -1);
+	}
+	return (n);
 }
