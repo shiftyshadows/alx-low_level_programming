@@ -11,11 +11,11 @@ include "main.h"
 void swap_int(int *a, int *b)
 {
 /*Declaration of variables*/
-    int c;
+	int c;
 
 /*Code Logic*/
-    c = 0;
-    c = *a;
-    *a = *b;
+	c = 0;
+	c = *a;
+	*a = *b;
 	*b = c;
 }
