@@ -14,7 +14,7 @@ void puts2(char *str)
 	int i;
 
 /* Iterate over the string, printing every other character */
-	for (i = 0; str[i] != '$'; i += 2)
+	for (i = 0; str[i] != '\0'; i += 2)
 	{
 		_putchar(str[i]);
 	}
