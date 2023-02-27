@@ -11,6 +11,6 @@
 void reset_to_98(int *n)
 {
 /*Declaration of variables*/
-	*n = 98
+	*n = 98;
 
 }
