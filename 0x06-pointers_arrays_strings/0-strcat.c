@@ -1,21 +1,28 @@
 #include "main.h"
 
 /**
- * swap_int - swaps the values of two integers
+ * _strcat - swaps the values of two integers
  *
- * @a: number being swapped
- * @b: number being swapped
- *
+ * @dest: first string
+ * @src: second string
+ * Return: Concatenated string
  */
 
-void swap_int(int *a, int *b)
+char *_strcat(char *dest, char *src)
 {
 /*Declaration of variables*/
-	int c;
+	int dest_len = 0, i;
 
 /*Code Logic*/
-	c = 0;
-	c = *a;
-	*a = *b;
-	*b = c;
+	while (dest[dest_len] != '\0')
+	{
+		dest_len++;
+	}
+
+	for (i = 0; src[i] != '\0'; i++)
+	{
+		dest[dest_len + i] = src[i];
+	}
+	dest[dest_len + i] = '\0';
+	return (dest);
 }
