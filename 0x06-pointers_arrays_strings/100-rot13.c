@@ -1,21 +1,31 @@
 #include "main.h"
 
 /**
- * swap_int - swaps the values of two integers
+ * rot13 - swaps the values of two integers
  *
- * @a: number being swapped
- * @b: number being swapped
+ * @str: number being swapped
  *
+ * Return: character
  */
 
-void swap_int(int *a, int *b)
+char *rot13(char *str)
 {
 /*Declaration of variables*/
-	int c;
+	char *p = str;
 
 /*Code Logic*/
-	c = 0;
-	c = *a;
-	*a = *b;
-	*b = c;
+	while (*p != '\0')
+	{
+		if ((*p >= 'A' && *p <= 'M') || (*p >= 'a' && *p <= 'm'))
+		{
+			*p += 13;
+		}
+		else if ((*p >= 'N' && *p <= 'Z') || (*p >= 'n' && *p <= 'z'))
+		{
+			*p -= 13;
+		}
+		p++;
+	}
+	return (str);
 }
+
