@@ -1,21 +1,29 @@
 #include "main.h"
 
 /**
- * swap_int - swaps the values of two integers
+ * _strncpy - function that copies a string
  *
- * @a: number being swapped
- * @b: number being swapped
+ * @dest: destination string
+ * @src: source string
+ * @n: number
  *
+ * Return: Destination string
  */
 
-void swap_int(int *a, int *b)
+char *_strncpy(char *dest, char *src, int n)
 {
 /*Declaration of variables*/
-	int c;
+	int i;
 
 /*Code Logic*/
-	c = 0;
-	c = *a;
-	*a = *b;
-	*b = c;
+	for (i = 0; i < n && src[i] != '\0'; i++)
+	{
+		dest[i] = src[i];
+	}
+	for ( ; i < n; i++)
+	{
+		dest[i] = '\0';
+	}
+	return (dest);
 }
+
