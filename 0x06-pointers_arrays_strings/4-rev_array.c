@@ -1,21 +1,25 @@
 #include "main.h"
 
 /**
- * swap_int - swaps the values of two integers
+ * reverse_array -  function that reverses
+ * the content of an array of integers
  *
  * @a: number being swapped
- * @b: number being swapped
+ * @n: number being swapped
  *
  */
 
-void swap_int(int *a, int *b)
+void reverse_array(int *a, int n)
 {
 /*Declaration of variables*/
-	int c;
+	int i, temp;
 
-/*Code Logic*/
-	c = 0;
-	c = *a;
-	*a = *b;
-	*b = c;
+	for (i = 0; i < n / 2; i++)
+	{
+/*Swap elements at index i and n-i-1*/
+		temp = a[i];
+		a[i] = a[n - i - 1];
+		a[n - i - 1] = temp;
+	}
 }
+
