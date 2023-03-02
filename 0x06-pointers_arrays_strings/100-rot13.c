@@ -3,29 +3,27 @@
 /**
  * rot13 - swaps the values of two integers
  *
- * @str: number being swapped
+ * @s: number being swapped
  *
  * Return: character
  */
 
-char *rot13(char *str)
+char *rot13(char *s)
 {
-/*Declaration of variables*/
-	char *p = str;
+	int i, j;
+	char a[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+	char b[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
 
-/*Code Logic*/
-	while (*p != '\0')
+	for (i = 0; s[i] != '\0'; i++)
 	{
-		if ((*p >= 'A' && *p <= 'M') || (*p >= 'a' && *p <= 'm'))
+		for (j = 0; a[j] != '\0'; j++)
 		{
-			*p += 13;
+			if (s[i] == a[j])
+			{
+				s[i] = b[j];
+				break;
+			}
 		}
-		else if ((*p >= 'N' && *p <= 'Z') || (*p >= 'n' && *p <= 'z'))
-		{
-			*p -= 13;
-		}
-		p++;
 	}
-	return (str);
+	return (s);
 }
-
