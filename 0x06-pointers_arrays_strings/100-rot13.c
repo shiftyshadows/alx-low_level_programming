@@ -1,27 +1,31 @@
 #include "main.h"
 
 /**
- * rot13 -  a   function that encodes a string using rot13.
- * @s: An input string to encode using rot13
- * Return: An encode string
+ * rot13 - swaps the values of two integers
+ *
+ * @str: number being swapped
+ *
+ * Return: character
  */
-char *rot13(char *s)
-{
-	int i = 0;
 
-	while (s[i] != '\0')
+char *rot13(char *str)
+{
+/*Declaration of variables*/
+	char *p = str;
+
+/*Code Logic*/
+	while (*p != '\0')
 	{
-		while ((s[i] >= 'a' && s[i] <= 'z') ||
-				(s[i] >= 'A' && s[i] <= 'Z'))
+		if ((*p >= 'A' && *p <= 'M') || (*p >= 'a' && *p <= 'm'))
 		{
-			if ((s[i] >= 'a' && s[i] <= 'm') ||
-					(s[i] >= 'A' && s[i] <= 'M'))
-				s[i] += 13;
-			else
-				s[i] -= 13;
-			i++;
+			*p += 13;
 		}
-		i++;
+		else if ((*p >= 'N' && *p <= 'Z') || (*p >= 'n' && *p <= 'z'))
+		{
+			*p -= 13;
+		}
+		p++;
 	}
-	return (s);
+	return (str);
 }
+
