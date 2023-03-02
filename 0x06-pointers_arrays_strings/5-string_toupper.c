@@ -1,21 +1,29 @@
 #include "main.h"
 
 /**
- * swap_int - swaps the values of two integers
+ * string_toupper - function that changes all
+ * lowercase letters of a string to uppercase
  *
- * @a: number being swapped
- * @b: number being swapped
+ * @str: string to be changed to uppercase
  *
+ * Return: Uppercase string
  */
 
-void swap_int(int *a, int *b)
+char *string_toupper(char *str)
 {
 /*Declaration of variables*/
-	int c;
+	char *p = str;
 
 /*Code Logic*/
-	c = 0;
-	c = *a;
-	*a = *b;
-	*b = c;
+	while (*p != '\0')
+	{
+		if (*p >= 'a' && *p <= 'z')
+		{
+/*Convert to uppercase*/
+			*p = *p - 32;
+		}
+		p++;
+	}
+	return (str);
 }
+
