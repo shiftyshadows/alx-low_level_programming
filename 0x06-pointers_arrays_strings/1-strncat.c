@@ -1,21 +1,31 @@
 #include "main.h"
 
 /**
- * swap_int - swaps the values of two integers
+ * _strncat - function that concatenates
+ * two strings
  *
- * @a: number being swapped
- * @b: number being swapped
- *
+ * @dest: final string
+ * @src: first string
+ * @n: maximum number of bytes
+ * Return: Concatenated string
  */
 
-void swap_int(int *a, int *b)
+char *_strncat(char *dest, char *src, int n)
 {
 /*Declaration of variables*/
-	int c;
+	int dest_len = 0;
+	int i;
 
 /*Code Logic*/
-	c = 0;
-	c = *a;
-	*a = *b;
-	*b = c;
+	while (dest[dest_len] != '\0')
+	{
+		dest_len++;
+	}
+	for (i = 0; i < n && src[i] != '\0'; i++)
+	{
+		dest[dest_len + i] = src[i];
+	}
+	dest[dest_len + i] = '\0';
+	return (dest);
 }
+
