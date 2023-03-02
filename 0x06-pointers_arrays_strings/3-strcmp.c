@@ -1,21 +1,21 @@
 #include "main.h"
 
 /**
- * swap_int - swaps the values of two integers
+ * _strcmp - function that compares two strings
  *
- * @a: number being swapped
- * @b: number being swapped
- *
+ * @s1: 1st string
+ * @s2: 2nd string
+ * Return: The string
  */
 
-void swap_int(int *a, int *b)
+int _strcmp(char *s1, char *s2)
 {
-/*Declaration of variables*/
-	int c;
+	while (*s1 && *s2 && *s1 == *s2)
+	{
+		s1++;
+		s2++;
+	}
 
-/*Code Logic*/
-	c = 0;
-	c = *a;
-	*a = *b;
-	*b = c;
+	return ((*s1 == *s2) ? 0 : (*s1 < *s2) ? -1 : 1);
 }
+
