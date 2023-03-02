@@ -9,39 +9,38 @@
  *
  */
 
-
 char *cap_string(char *str)
 {
 /*Declaration of variables*/
-int i;
+	int i = 0;
 
-/*Flag to track if the previous character is a separator*/
-int sep = 1;
-
-/*Code Logic*/
-/*Capitalize the first letter of the string*/
-	if (str[0] >= 'a' && str[0] <= 'z')
+	while (str[i] != '\0')
 	{
-		str[0] -= 32;
-	}
-	for (i = 1; str[i] != '\0'; i++)
-	{
-/*Capitalize the first letter of each word*/
-		if (sep && str[i] >= 'a' && str[i] <= 'z')
-		{
-			str[i] -= 32;
-		}
-/* Convert any other uppercase letters to lowercase*/
-		else if (str[i] >= 'A' && str[i] <= 'Z')
-		{
-			str[i] += 32;
-		}
-/* Set the flag to track separators*/
-		sep =	(str[i] == ' ' || str[i] == '\t' || str[i] == '\n' ||
+	/*Check if the current character is a separator*/
+		if (str[i] == ' ' || str[i] == '\t' || str[i] == '\n' ||
 			str[i] == ',' || str[i] == ';' || str[i] == '.' ||
 			str[i] == '!' || str[i] == '?' || str[i] == '"' ||
-			str[i] == '(' || str[i] == ')' || str[i] == '{' ||
-			str[i] == '}');
+			str[i] == '(' || str[i] == ')' || str[i] == '{' || str[i] == '}')
+		{
+			i++;
+			continue;
+		}
+
+		/*Capitalize the first letter of the current word*/
+		if (i == 0 ||
+			str[i - 1] == ' ' || str[i - 1] == '\t' || str[i - 1] == '\n' ||
+			str[i - 1] == ',' || str[i - 1] == ';' || str[i - 1] == '.' ||
+			str[i - 1] == '!' || str[i - 1] == '?' || str[i - 1] == '"' ||
+			str[i - 1] == '(' || str[i - 1] == ')' || str[i - 1] == '{' ||
+			str[i - 1] == '}')
+		{
+			if (str[i] >= 'a' && str[i] <= 'z')
+			{
+				str[i] = str[i] - ('a' - 'A');
+			}
+		}
+
+		i++;
 	}
 	return (str);
 }
