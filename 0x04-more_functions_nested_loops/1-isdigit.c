@@ -1,21 +1,24 @@
 #include "main.h"
 
 /**
- * swap_int - swaps the values of two integers
+ * _isdigit - function that checks for
+ * a digit (0 through 9).
  *
- * @a: number being swapped
- * @b: number being swapped
+ * @c: character eing checked
  *
+ * Return: 0(if not digit) or 1 (if digit)
  */
 
-void swap_int(int *a, int *b)
+int _isdigit(int c)
 {
-/*Declaration of variables*/
-        int c;
-
 /*Code Statements*/
-        c = 0;
-        c = *a;
-        *a = *b;
-        *b = c;
+	if (c >= '0' && c <= '9')
+	{
+		return (1);
+	}
+	else
+	{
+		return (0);
+	}
 }
+

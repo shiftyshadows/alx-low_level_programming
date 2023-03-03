@@ -1,21 +1,16 @@
 #include "main.h"
 
 /**
- * swap_int - swaps the values of two integers
+ * mul - function that multiplies two integers
  *
- * @a: number being swapped
- * @b: number being swapped
- *
+ * @a: first number being multiplied
+ * @b: 2nd number being multiplied
+ * Return: result
  */
 
-void swap_int(int *a, int *b)
+int mul(int a, int b)
 {
-/*Declaration of variables*/
-        int c;
-
 /*Code Statements*/
-        c = 0;
-        c = *a;
-        *a = *b;
-        *b = c;
+	return (a * b);
 }
+
