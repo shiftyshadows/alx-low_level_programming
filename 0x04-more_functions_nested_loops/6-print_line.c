@@ -1,21 +1,25 @@
 #include "main.h"
 
 /**
- * swap_int - swaps the values of two integers
+ * print_line - function that draws a straight
+ * line in the terminal.
  *
- * @a: number being swapped
- * @b: number being swapped
- *
+ * @n: number of times '_' should be printed
  */
 
-void swap_int(int *a, int *b)
+void print_line(int n)
 {
 /*Declaration of variables*/
-        int c;
+	int i;
 
-/*Code Logic*/
-        c = 0;
-        c = *a;
-        *a = *b;
-        *b = c;
+/*Code Statements*/
+	if (n > 0)
+	{
+		for (i = 0; i < n; i++)
+		{
+			_putchar('_');
+		}
+	}
+	_putchar('\n');
 }
+
