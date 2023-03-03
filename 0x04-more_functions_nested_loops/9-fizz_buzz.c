@@ -1,21 +1,38 @@
-#include "main.h"
+#include <stdio.h>
 
 /**
- * swap_int - swaps the values of two integers
+ * main - fizzbuzz
  *
- * @a: number being swapped
- * @b: number being swapped
- *
+ * Return: O (Success)
  */
 
-void swap_int(int *a, int *b)
+
+int main(void)
 {
 /*Declaration of variables*/
-        int c;
+	int i;
 
-/*Code Logic*/
-        c = 0;
-        c = *a;
-        *a = *b;
-        *b = c;
+/*Code Statements*/
+	for (i = 1; i <= 100; i++)
+	{
+		if (i % 3 == 0 && i % 5 == 0)
+		{
+			printf("FizzBuzz ");
+		}
+		else if (i % 3 == 0)
+		{
+			printf("Fizz ");
+		}
+		else if (i % 5 == 0)
+		{
+			printf("Buzz ");
+		}
+		else
+		{
+			printf("%d ", i);
+		}
+	}
+	printf("\n");
+	return (0);
 }
+
