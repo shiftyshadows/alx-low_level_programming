@@ -1,21 +1,34 @@
 #include "main.h"
 
 /**
- * swap_int - swaps the values of two integers
+ * print_number - function that prints
+ * an integer.
  *
- * @a: number being swapped
- * @b: number being swapped
+ * @n: number
  *
  */
 
-void swap_int(int *a, int *b)
+void print_number(int n)
 {
 /*Declaration of variables*/
-        int c;
+	int digit, divisor = 1;
 
-/*Code Logic*/
-        c = 0;
-        c = *a;
-        *a = *b;
-        *b = c;
+/*Code Statements*/
+	if (n < 0)
+	{
+		_putchar('-');
+		n = -n;
+	}
+	while (n / divisor > 9)
+	{
+		divisor *= 10;
+	}
+	while (divisor != 0)
+	{
+		digit = n / divisor;
+		_putchar(digit + '0');
+		n %= divisor;
+		divisor /= 10;
+	}
 }
+
