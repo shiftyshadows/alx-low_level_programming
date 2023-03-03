@@ -1,21 +1,30 @@
 #include "main.h"
 
 /**
- * swap_int - swaps the values of two integers
+ * print_triangle - function that prints a triangle,
+ * followed by a new line
  *
- * @a: number being swapped
- * @b: number being swapped
- *
+ * @size: size of triangle
  */
 
-void swap_int(int *a, int *b)
+void print_triangle(int size)
 {
 /*Declaration of variables*/
-        int c;
+	int i, j;
 
-/*Code Logic*/
-        c = 0;
-        c = *a;
-        *a = *b;
-        *b = c;
+/*Code Statements*/
+	if (size <= 0)
+	{
+		_putchar('\n');
+		return;
+	}
+	for (i = 1; i <= size; i++)
+	{
+		for (j = 1; j <= i; j++)
+		{
+			_putchar('#');
+		}
+		_putchar('\n');
+	}
 }
+
