@@ -1,21 +1,33 @@
 #include "main.h"
 
 /**
- * swap_int - swaps the values of two integers
+ * print_square - function that prints a square,
+ * followed by a new line
  *
- * @a: number being swapped
- * @b: number being swapped
+ * @size: length/ width of square
  *
  */
 
-void swap_int(int *a, int *b)
+void print_square(int size)
 {
 /*Declaration of variables*/
-        int c;
+	int i, j;
 
-/*Code Logic*/
-        c = 0;
-        c = *a;
-        *a = *b;
-        *b = c;
+/*Code Statements*/
+	if (size > 0)
+	{
+		for (i = 0; i < size; i++)
+		{
+			for (j = 0; j < size; j++)
+			{
+				_putchar('#');
+			}
+			_putchar('\n');
+		}
+	}
+	else
+	{
+		_putchar('\n');
+	}
 }
+
