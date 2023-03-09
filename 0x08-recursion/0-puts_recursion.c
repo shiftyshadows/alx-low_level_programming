@@ -1,21 +1,21 @@
 #include "main.h"
 
 /**
- * swap_int - swaps the values of two integers
+ * _puts_recursion - swaps the values of two integers
  *
- * @a: number being swapped
- * @b: number being swapped
- *
+ * @s: string to be printed
  */
 
-void swap_int(int *a, int *b)
+void _puts_recursion(char *s)
 {
-/*Declaration of variables*/
-	int c;
-
-/*Code Logic*/
-	c = 0;
-	c = *a;
-	*a = *b;
-	*b = c;
+	/*Code Statements*/
+	if (*s == '\0')
+	{
+		_putchar('\n');
+	}
+	else
+	{
+		_putchar(*s);
+		_puts_recursion(s + 1);
+	}
 }
