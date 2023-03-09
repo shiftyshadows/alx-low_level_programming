@@ -12,32 +12,43 @@
 
 int _sqrt_recursion(int n)
 {
+	/*Declaration of variables*/
+	int low = 1, high = n, mid, res;
+
 	/*Code Statements*/
 	if (n < 0)
 	{
-		return (-1); /*return -1 for negative input (error condition)*/
+		return (-1);/* Error: square root
+			     * of negative number is imaginary
+			     */
 	}
-	else if (n <= 1)
+	if (n == 0 || n == 1)
 	{
-		return (n); /*base case: return n for n=0 or 1*/
+		return (n); /* Base case: square root
+			     * of 0 and 1 is the number itself
+			     */
 	}
-	else
-	{
-		/*Declaration of Variables*/
-		int i;
 
-		for (i = 1; i * i < n; i++)
+	while (low <= high)
+	{
+		mid = (low + high) / 2;
+		if (mid * mid == n)
 		{
-			/*do nothing, just iterate until i^2 >= n*/
+			/* If mid is the square root, return mid*/
+			return (mid);
 		}
-		if (i * i == n)
+		if (mid * mid < n)
 		{
-			return (i); /*return i if i^2=n (exact square root)*/
+			/*Discard left half*/
+			low = mid + 1;
+			res = mid;
 		}
 		else
 		{
-			return (-1); /*return -1 if n does not have a natural square root*/
+			/* Discard right half*/
+			high = mid - 1;
 		}
 	}
+	return (res); /*Return the last valid value of res*/
 }
 
