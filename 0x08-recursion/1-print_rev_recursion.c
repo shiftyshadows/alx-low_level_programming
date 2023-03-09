@@ -1,21 +1,23 @@
 #include "main.h"
 
 /**
- * swap_int - swaps the values of two integers
+ *  _print_rev_recursion - function that prints a string in reverse.
  *
- * @a: number being swapped
- * @b: number being swapped
+ * @s: string to be reversed
  *
  */
 
-void swap_int(int *a, int *b)
+void _print_rev_recursion(char *s)
 {
-/*Declaration of variables*/
-	int c;
-
-/*Code Logic*/
-	c = 0;
-	c = *a;
-	*a = *b;
-	*b = c;
+	/*Code Statements*/
+	if (*s == '\0')
+	{
+		return;
+	}
+	else
+	{
+		_print_rev_recursion(s + 1);
+		_putchar(*s);
+	}
 }
+
