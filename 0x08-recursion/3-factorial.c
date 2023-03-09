@@ -1,21 +1,27 @@
 #include "main.h"
 
 /**
- * swap_int - swaps the values of two integers
+ * factorial - function that returns the factorial of a given number.
  *
- * @a: number being swapped
- * @b: number being swapped
+ * @n: interger whose factorial is to be calculated
+ * Return: integer result
  *
  */
 
-void swap_int(int *a, int *b)
+int factorial(int n)
 {
-/*Declaration of variables*/
-	int c;
-
-/*Code Logic*/
-	c = 0;
-	c = *a;
-	*a = *b;
-	*b = c;
+	/*Code Statements*/
+	if (n < 0)
+	{
+		return (-1); /*return -1 for negative input (error condition)*/
+	}
+	else if (n == 0)
+	{
+		return (1); /*base case: return 1 for n=0*/
+	}
+	else
+	{
+		return (n * factorial(n - 1));
+	}
 }
+
