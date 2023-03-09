@@ -1,21 +1,29 @@
 #include "main.h"
 
 /**
- * swap_int - swaps the values of two integers
+ * _pow_recursion - function that returns the
+ * value of x raised to the power of y
  *
- * @a: number being swapped
- * @b: number being swapped
+ * @x: number
+ * @y: power
  *
  */
 
-void swap_int(int *a, int *b)
+int _pow_recursion(int x, int y)
 {
-/*Declaration of variables*/
-	int c;
-
-/*Code Logic*/
-	c = 0;
-	c = *a;
-	*a = *b;
-	*b = c;
+	/*Code Statements*/
+	if (y < 0)
+	{
+	return (-1);
+	}
+	else if (y == 0)
+	{
+	return (1);
+	}
+	else
+	{
+	return (x * _pow_recursion(x, y - 1));
+	}
 }
+
+
