@@ -1,21 +1,45 @@
 #include "main.h"
 
 /**
- * swap_int - swaps the values of two integers
+ * is_prime_number_helper - helper function
  *
- * @a: number being swapped
- * @b: number being swapped
+ * @n: number being swapped
+ * @i: number being swapped
  *
+ * Return: integer result
  */
 
-void swap_int(int *a, int *b)
+int is_prime_number_helper(int n, int i)
 {
-/*Declaration of variables*/
-	int c;
+	/*Code Statements*/
+	if (n <= 1)
+	{
+		return (0); /*n is not prime*/
+	}
+	if (i * i > n)
+	{
+	return (1); /*n is prime */
+	}
+	if (n % i == 0)
+	{
+	return (0); /*n is not prime*/
+	}
+	/* Recursive case */
+	return (is_prime_number_helper(n, i + 1));
+}
 
-/*Code Logic*/
-	c = 0;
-	c = *a;
-	*a = *b;
-	*b = c;
+/**
+ * is_prime_number - function that returns 1 if the input
+ * integer is a prime number, otherwise return 0
+ *
+ * @n: number being swapped
+ *
+ * Return: integer result
+ */
+
+
+int is_prime_number(int n)
+{
+	/* Call the helper function with i = 2 */
+	return (is_prime_number_helper(n, 2));
 }
