@@ -1,21 +1,43 @@
 #include "main.h"
 
 /**
- * swap_int - swaps the values of two integers
+ * _sqrt_recursion - function that returns the
+ * natural square root of a number.
  *
- * @a: number being swapped
- * @b: number being swapped
+ * @n: number whose natural square root is to
+ * be deduced
  *
+ * Return: integer result
  */
 
-void swap_int(int *a, int *b)
+int _sqrt_recursion(int n)
 {
-/*Declaration of variables*/
-	int c;
+	/*Code Statements*/
+	if (n < 0)
+	{
+		return (-1); /*return -1 for negative input (error condition)*/
+	}
+	else if (n <= 1)
+	{
+		return (n); /*base case: return n for n=0 or 1*/
+	}
+	else
+	{
+		/*Declaration of Variables*/
+		int i;
 
-/*Code Logic*/
-	c = 0;
-	c = *a;
-	*a = *b;
-	*b = c;
+		for (i = 1; i * i < n; i++)
+		{
+			/*do nothing, just iterate until i^2 >= n*/
+		}
+		if (i * i == n)
+		{
+			return (i); /*return i if i^2=n (exact square root)*/
+		}
+		else
+		{
+			return (-1); /*return -1 if n does not have a natural square root*/
+		}
+	}
 }
+
