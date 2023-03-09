@@ -1,21 +1,22 @@
 #include "main.h"
 
 /**
- * swap_int - swaps the values of two integers
+ * _strlen_recursion -  function that returns the length of a string.
  *
- * @a: number being swapped
- * @b: number being swapped
+ * @s: string whose length is to be calculated
  *
  */
 
-void swap_int(int *a, int *b)
+int _strlen_recursion(char *s)
 {
-/*Declaration of variables*/
-	int c;
-
-/*Code Logic*/
-	c = 0;
-	c = *a;
-	*a = *b;
-	*b = c;
+	/*Code Statements*/
+	if (*s == '\0')
+	{
+	return 0;
+	}
+	else
+	{
+	return 1 + _strlen_recursion(s + 1);
+	}
 }
+
