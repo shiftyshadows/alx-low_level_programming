@@ -1,21 +1,30 @@
 #include "main.h"
 
 /**
- * swap_int - swaps the values of two integers
- *
- * @a: number being swapped
- * @b: number being swapped
- *
+ * wildcmp - Compare strings
+ * @s1: pointer to string params
+ * @s2: pointer to string params
+ * Return: 0
  */
 
-void swap_int(int *a, int *b)
+int wildcmp(char *s1, char *s2)
 {
-/*Declaration of variables*/
-	int c;
+	if (*s1 == '\0')
+	{
+		if (*s2 != '\0' && *s2 == '*')
+		{
+			return (wildcmp(s1, s2 + 1));
+		}
+		return (*s2 == '\0');
+	}
 
-/*Code Logic*/
-	c = 0;
-	c = *a;
-	*a = *b;
-	*b = c;
+	if (*s2 == '*')
+	{
+		return (wildcmp(s1 + 1, s2) || wildcmp(s1, s2 + 1));
+	}
+	else if (*s1 == *s2)
+	{
+		return (wildcmp(s1 + 1, s2 + 1));
+	}
+	return (0);
 }
