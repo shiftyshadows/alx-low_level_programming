@@ -1,29 +1,41 @@
 #include "main.h"
+#include <stdlib.h>
 
 /**
- * _strncpy - function that copies a string
+ * create_array - function that creates an array of chars,
+ * and initializes it with a specific char.
  *
- * @dest: destination string
- * @src: source string
- * @n: number
+ * @size: size of aaray
+ * @c: initialization character
  *
- * Return: Destination string
+ * Return: created array
  */
 
-char *_strncpy(char *dest, char *src, int n)
+
+char *create_array(unsigned int size, char c)
 {
-/*Declaration of variables*/
-	int i;
+	/*Declaration of variables*/
+	char *arr;
+	unsigned int i;
 
-/*Code Logic*/
-	for (i = 0; i < n && src[i] != '\0'; i++)
+	/*Code Statements*/
+	/* Check if size is zero */
+	if (size == 0)
 	{
-		dest[i] = src[i];
+		return (NULL);
 	}
-	for ( ; i < n; i++)
+
+	/* Allocate memory for the array */
+	arr = malloc(size * sizeof(char));
+	if (arr == NULL)
 	{
-		dest[i] = '\0';
+		return (NULL);
 	}
-	return (dest);
+
+	/* Initialize the array with the specified char */
+	for (i = 0; i < size; i++)
+	{
+		arr[i] = c;
+	}
+	return (arr);
 }
-
