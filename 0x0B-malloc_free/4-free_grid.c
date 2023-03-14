@@ -1,29 +1,28 @@
 #include "main.h"
+#include <stdlib.h>
 
 /**
- * _strncpy - function that copies a string
+ * free_grid -  function that frees a 2 dimensional grid previously
+ * created by your alloc_grid function.
  *
- * @dest: destination string
- * @src: source string
- * @n: number
+ * @grid: destination string
+ * @height: source string
  *
- * Return: Destination string
  */
 
-char *_strncpy(char *dest, char *src, int n)
+void free_grid(int **grid, int height)
 {
-/*Declaration of variables*/
+	/* Declaration of variables*/
 	int i;
 
-/*Code Logic*/
-	for (i = 0; i < n && src[i] != '\0'; i++)
+	/* Code Statements */
+	/* Free memory for each row of the 2D array */
+	for (i = 0; i < height; i++)
 	{
-		dest[i] = src[i];
+		free(grid[i]);
 	}
-	for ( ; i < n; i++)
-	{
-		dest[i] = '\0';
-	}
-	return (dest);
+
+	/* Free memory for the 2D array itself */
+	free(grid);
 }
 
