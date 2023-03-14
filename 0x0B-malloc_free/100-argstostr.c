@@ -1,39 +1,53 @@
 #include "main.h"
 #include <stdlib.h>
-#include <string.h>
 
 /**
- * _strdup - function that returns a pointer to a newly allocated
- * space in memory, which contains a copy of the string given as a
- * parameter
+ * argstostr - function that concatenates all the arguments
+ * of your program.
  *
- * @str: pointer of type char
+ * @ac: integer
+ * @av: pointer
  *
  * Return: Duplicated string
  */
 
-
-char *_strdup(char *str)
+char *argstostr(int ac, char **av)
 {
-	/*Declaration of variables*/
-	char *dup_str;
+	/* Declaration of variables */
+	int length, i, j, k;
+	char *result;
 
-	/*Code Statements*/
-	/* Check if str is NULL */
-	if (str == NULL)
+	/* Code Statements */
+	if (ac == 0 || av == NULL)
 	{
 		return (NULL);
 	}
-
-	/* Allocate memory for the new string */
-	dup_str = malloc(strlen(str) + 1);
-	if (dup_str == NULL)
+	/* compute the length of the concatenated string */
+	length = 0;
+	for (i = 0; i < ac; i++)
+	{
+		for (j = 0; av[i][j] != '\0'; j++)
+		{
+			length++;
+		}
+		length++; /* account for the newline character */
+	}
+	/* allocate memory for the concatenated string */
+	result = malloc(length * sizeof(char));
+	if (result == NULL)
 	{
 		return (NULL);
 	}
-
-	/* Copy the contents of str to the new string */
-	strcpy(dup_str, str);
-
-	return (dup_str);
+	/* concatenate the arguments into the result string */
+	k = 0;
+	for (i = 0; i < ac; i++)
+	{
+		for (j = 0; av[i][j] != '\0'; j++)
+		{
+			result[k++] = av[i][j];
+		}
+		result[k++] = '\n'; /* add the newline character */
+	}
+	result[k] = '\0'; /* add the null terminator */
+	return (result);
 }
