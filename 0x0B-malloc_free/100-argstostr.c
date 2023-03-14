@@ -28,7 +28,7 @@ char *argstostr(int ac, char **av)
 	{
 		for (j = 0; av[i][j] != '\0'; j++)
 		{
-			length++;
+			++length;
 		}
 		++length; /* account for the newline character */
 	}
