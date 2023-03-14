@@ -25,7 +25,7 @@ int **alloc_grid(int width, int height)
 	}
 
 	/* Allocate memory for the 2D array */
-	grid = malloc(height * sizeof(int*));
+	grid = malloc(height * sizeof(int *));
 	if (grid == NULL)
 	{
 		return (NULL);
