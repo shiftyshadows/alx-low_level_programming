@@ -1,29 +1,39 @@
 #include "main.h"
+#include <stdlib.h>
+#include <string.h>
 
 /**
- * _strncpy - function that copies a string
+ * _strdup - function that returns a pointer to a newly allocated
+ * space in memory, which contains a copy of the string given as a
+ * parameter
  *
- * @dest: destination string
- * @src: source string
- * @n: number
+ * @str: pointer of type char
  *
- * Return: Destination string
+ * Return: Duplicated string
  */
 
-char *_strncpy(char *dest, char *src, int n)
+
+char *_strdup(char *str)
 {
-/*Declaration of variables*/
-	int i;
+	/*Declaration of variables*/
+	char *dup_str;
 
-/*Code Logic*/
-	for (i = 0; i < n && src[i] != '\0'; i++)
+	/*Code Statements*/
+	/* Check if str is NULL */
+	if (str == NULL)
 	{
-		dest[i] = src[i];
+		return (NULL);
 	}
-	for ( ; i < n; i++)
+
+	/* Allocate memory for the new string */
+	dup_str = malloc(strlen(str) + 1);
+	if (dup_str == NULL)
 	{
-		dest[i] = '\0';
+		return (NULL);
 	}
-	return (dest);
+
+	/* Copy the contents of str to the new string */
+	strcpy(dup_str, str);
+
+	return (dup_str);
 }
-
