@@ -1,29 +1,57 @@
 #include "main.h"
+#include <stdlib.h>
 
 /**
- * _strncpy - function that copies a string
+ * alloc_grid - function that returns a pointer to a
+ * 2 dimensional array of integers.
  *
- * @dest: destination string
- * @src: source string
- * @n: number
+ * @width:width of grid
+ * @height: height of grid
  *
- * Return: Destination string
+ * Return: grid array
  */
 
-char *_strncpy(char *dest, char *src, int n)
-{
-/*Declaration of variables*/
-	int i;
 
-/*Code Logic*/
-	for (i = 0; i < n && src[i] != '\0'; i++)
+int **alloc_grid(int width, int height)
+{
+	/* Declaration of variables */
+	int **grid, j, i;
+
+	/* Code Statements */
+	/* Check if width or height is 0 or negative */
+	if (width <= 0 || height <= 0)
 	{
-		dest[i] = src[i];
+		return (NULL);
 	}
-	for ( ; i < n; i++)
+
+	/* Allocate memory for the 2D array */
+	grid = malloc(height * sizeof(int));
+	if (grid == NULL)
 	{
-		dest[i] = '\0';
+		return (NULL);
 	}
-	return (dest);
+
+	/* Allocate memory for each row of the 2D array */
+	for (i = 0; i < height; i++)
+	{
+		grid[i] = malloc(width * sizeof(int));
+		if (grid[i] == NULL)
+		{
+			/* Free previously allocated memory and return NULL on failure */
+			for (j = 0; j < i; j++)
+			{
+				free(grid[j]);
+			}
+			free(grid);
+			return (NULL);
+		}
+		/* Initialize each element of the row to 0 */
+		for (j = 0; j < width; j++)
+		{
+			grid[i][j] = 0;
+		}
+	}
+
+	return (grid);
 }
 
