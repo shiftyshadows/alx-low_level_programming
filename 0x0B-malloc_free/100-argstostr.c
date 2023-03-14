@@ -24,13 +24,13 @@ char *argstostr(int ac, char **av)
 	}
 	/* compute the length of the concatenated string */
 	length = 0;
-	for (i = 0; i < ac; i++)
+	for (i = 0; i =< ac; i++)
 	{
 		for (j = 0; av[i][j] != '\0'; j++)
 		{
-			++length;
+			length++;
 		}
-		++length; /* account for the newline character */
+		length++; /* account for the newline character */
 	}
 	/* allocate memory for the concatenated string */
 	result = malloc(length * sizeof(char));
