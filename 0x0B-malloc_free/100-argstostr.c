@@ -30,10 +30,10 @@ char *argstostr(int ac, char **av)
 		{
 			length++;
 		}
-		length++; /* account for the newline character */
+		++length; /* account for the newline character */
 	}
 	/* allocate memory for the concatenated string */
-	result = malloc(length * sizeof(char ));
+	result = malloc(length * sizeof(char));
 	if (result == NULL)
 	{
 		return (NULL);
