@@ -1,31 +1,38 @@
 #include "main.h"
+#include <stdlib.h>
+#include <string.h>
 
 /**
- * _strncat - function that concatenates
- * two strings
+ * _calloc - function that allocates memory for an array,
+ * using malloc.
  *
- * @dest: final string
- * @src: first string
- * @n: maximum number of bytes
- * Return: Concatenated string
+ * @nmemb: number of elements in array
+ * @size: byte size of each element
+ *
+ * Return: Pointer to the allocated memory.
  */
 
-char *_strncat(char *dest, char *src, int n)
+
+
+void *_calloc(unsigned int nmemb, unsigned int size)
 {
 /* Declaration of variables */
-	int dest_len = 0;
-	int i;
+	void *ptr;
 
 /* Code Statements */
-	while (dest[dest_len] != '\0')
+	if (nmemb == 0 || size == 0)
 	{
-		dest_len++;
+		return (NULL); /* Return NULL if nmemb or size is 0 */
 	}
-	for (i = 0; i < n && src[i] != '\0'; i++)
-	{
-		dest[dest_len + i] = src[i];
-	}
-	dest[dest_len + i] = '\0';
-	return (dest);
-}
 
+	ptr = malloc(nmemb * size); /* Allocate memory using malloc */
+	if (ptr == NULL)
+	{
+		return (NULL); /* Return NULL if malloc fails */
+	}
+
+	/* Set memory to zero using memset */
+	memset(ptr, 0, nmemb * size);
+
+	return (ptr); /* Return pointer to allocated memory */
+}
