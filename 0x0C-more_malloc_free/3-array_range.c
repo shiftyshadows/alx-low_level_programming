@@ -1,31 +1,39 @@
 #include "main.h"
 
 /**
- * _strncat - function that concatenates
- * two strings
+ * array_range - function that creates an array of integers
  *
- * @dest: final string
- * @src: first string
- * @n: maximum number of bytes
- * Return: Concatenated string
+ * @min: minimum value in array
+ * @max: maximum value in array
+ *
+ * Return: pointer to the newly created array
  */
 
-char *_strncat(char *dest, char *src, int n)
+
+#include <stdlib.h>
+
+int *array_range(int min, int max)
 {
 /* Declaration of variables */
-	int dest_len = 0;
-	int i;
+	int size, *arr, i;
 
 /* Code Statements */
-	while (dest[dest_len] != '\0')
+	if (min > max)
 	{
-		dest_len++;
+		return (NULL); /* Return NULL if min > max */
 	}
-	for (i = 0; i < n && src[i] != '\0'; i++)
-	{
-		dest[dest_len + i] = src[i];
-	}
-	dest[dest_len + i] = '\0';
-	return (dest);
-}
 
+	size = max - min + 1;
+	arr = malloc(size * sizeof(int)); /* Allocate memory using malloc */
+	if (arr == NULL)
+	{
+		return (NULL); /* Return NULL if malloc fails */
+	}
+
+	for (i = 0; i < size; i++)
+	{
+		arr[i] = min + i; /* Populate array with values from min to max */
+	}
+
+	return (arr); /* Return pointer to the newly created array */
+}
