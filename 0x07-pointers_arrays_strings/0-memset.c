@@ -1,21 +1,25 @@
 #include "main.h"
 
 /**
- * swap_int - swaps the values of two integers
+ * _memset - function that fills memory with a constant byte.
  *
- * @a: number being swapped
- * @b: number being swapped
+ * @s: pointer to memory location
+ * @b: constant nyte
+ * @n: number of byte to be filled
  *
+ * Return: pointer to the memory area s
  */
 
-void swap_int(int *a, int *b)
+char *_memset(char *s, char b, unsigned int n)
 {
-/*Declaration of variables*/
-	int c;
+/* Declaration of Variables */
+	unsigned int i;
 
-/*Code Logic*/
-	c = 0;
-	c = *a;
-	*a = *b;
-	*b = c;
+/* Code Statements */
+	for (i = 0; i < n; i++)
+	{
+		s[i] = b;
+	}
+	return (s);
 }
+
