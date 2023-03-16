@@ -10,7 +10,7 @@
  * Return: pointer to the memory area dest
  */
 
-char *_memcpy(char *s, char b, unsigned int n)
+char *_memcpy(char *dest, char *src, unsigned int n)
 {
 /* Declaration of Variables */
 	unsigned int i;
@@ -18,7 +18,7 @@ char *_memcpy(char *s, char b, unsigned int n)
 /* Code Statements */
 	for (i = 0; i < n; i++)
 	{
-		dest[i] = src[i]
+		dest[i] = src[i];
 	}
 	return (dest);
 }
