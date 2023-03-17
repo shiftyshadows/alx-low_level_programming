@@ -1,21 +1,23 @@
 #include "main.h"
 
 /**
- * swap_int - swaps the values of two integers
- *
- * @a: number being swapped
- * @b: number being swapped
- *
- */
+ * print_chessboard - prints chessboard.
+ * @a: matrix
+*/
 
-void swap_int(int *a, int *b)
+void print_chessboard(char (*a)[8])
 {
 /*Declaration of variables*/
-	int c;
+	int i, j;
 
-/*Code Logic*/
-	c = 0;
-	c = *a;
-	*a = *b;
-	*b = c;
+/* Code Statements */
+	for (i = 0; i < 8; i++)
+	{
+		for (j = 0; j < 8; j++)
+		{
+			_putchar(*(*(i + a) + j));
+		}
+	_putchar('\n');
+	}
 }
+
