@@ -1,21 +1,13 @@
 #include "main.h"
-
 /**
- * swap_int - swaps the values of two integers
- *
- * @a: number being swapped
- * @b: number being swapped
- *
+ * set_string - sets pointer val to char
+ * @s: pointer
+ * @to: char
  */
 
-void swap_int(int *a, int *b)
+void set_string(char **s, char *to)
 {
-/*Declaration of variables*/
-	int c;
-
-/*Code Logic*/
-	c = 0;
-	c = *a;
-	*a = *b;
-	*b = c;
+/* Code Statements */
+	*s = to;
 }
+
