@@ -1,21 +1,37 @@
 #include "main.h"
+#include <stdio.h>
 
 /**
- * swap_int - swaps the values of two integers
+ * _strstr - function that locates a substring.
  *
- * @a: number being swapped
- * @b: number being swapped
+ * @haystack: pointer to string
+ * @needle: pointer to substring
  *
+ * Return: Pointer to string
  */
 
-void swap_int(int *a, int *b)
-{
-/*Declaration of variables*/
-	int c;
 
-/*Code Logic*/
-	c = 0;
-	c = *a;
-	*a = *b;
-	*b = c;
+char *_strstr(char *haystack, char *needle)
+{
+/* Declaration of Variables */
+	char *h, *n;
+
+/* Code Statements */
+	while (*haystack != '\0')
+	{
+		h = haystack;
+		n = needle;
+		while (*n != '\0' && *h == *n)
+		{
+			h++;
+			n++;
+		}
+		if (*n == '\0')
+		{
+			return (haystack);
+		}
+		haystack++;
+	}
+	return (NULL);
 }
+
