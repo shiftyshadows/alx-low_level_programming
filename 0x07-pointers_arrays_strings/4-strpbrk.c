@@ -1,21 +1,33 @@
 #include "main.h"
+#include <stdio.h>
 
 /**
- * swap_int - swaps the values of two integers
+ * _strpbrk - swaps the values of two integers
  *
- * @a: number being swapped
- * @b: number being swapped
+ * @s: pointer to string to be searched
+ * @accept: pointer to string to be located
  *
+ * Return: character pointer
  */
 
-void swap_int(int *a, int *b)
+char *_strpbrk(char *s, char *accept)
 {
-/*Declaration of variables*/
-	int c;
+/* Declaration of Variables */
+	char *a;
 
-/*Code Logic*/
-	c = 0;
-	c = *a;
-	*a = *b;
-	*b = c;
+/* Code Statements */
+	while (*s != '\0')
+	{
+		a = accept;
+		while (*a != '\0')
+		{
+			if (*s == *a)
+			{
+				return (s);
+			}
+			a++;
+		}
+		s++;
+	}
+	return (NULL);
 }
