@@ -1,29 +1,34 @@
-#include "main.h"
+#include "function_pointers.h"
 
 /**
- * _strncpy - function that copies a string
+ * int_index - function that searches for an integer.
  *
- * @dest: destination string
- * @src: source string
- * @n: number
+ * @array: integer pointer
+ * @cmp: function pointer
+ * @size: integer
  *
- * Return: Destination string
+ * Return: Integer
  */
 
-char *_strncpy(char *dest, char *src, int n)
+int int_index(int *array, int size, int (*cmp)(int))
 {
-/*Declaration of variables*/
+/* Declaration of Variables */
 	int i;
 
-/*Code Logic*/
-	for (i = 0; i < n && src[i] != '\0'; i++)
+/* Code Statements */
+	if (size <= 0)
 	{
-		dest[i] = src[i];
+		return (-1);
 	}
-	for ( ; i < n; i++)
+
+	for (i = 0; i < size; i++)
 	{
-		dest[i] = '\0';
+		if (cmp(array[i]))
+		{
+			return (i);
+		}
 	}
-	return (dest);
+
+	return (-1);
 }
 
