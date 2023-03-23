@@ -1,29 +1,23 @@
-#include "main.h"
+#include "function_pointers.h"
 
 /**
- * _strncpy - function that copies a string
+ * array_iterator - function that executes a function given as
+ * a parameter on each element of an array
  *
- * @dest: destination string
- * @src: source string
- * @n: number
- *
- * Return: Destination string
+ * @array: integer pointer
+ * @size: unsigned integer
+ * @action: function pointer
  */
 
-char *_strncpy(char *dest, char *src, int n)
+void array_iterator(int *array, size_t size, void (*action)(int))
 {
-/*Declaration of variables*/
-	int i;
+/* Declaration of Variables */
+	unsigned int i;
 
-/*Code Logic*/
-	for (i = 0; i < n && src[i] != '\0'; i++)
+/* Code Statements*/
+	for (i = 0; i < size; i++)
 	{
-		dest[i] = src[i];
+		action(array[i]);
 	}
-	for ( ; i < n; i++)
-	{
-		dest[i] = '\0';
-	}
-	return (dest);
 }
 
