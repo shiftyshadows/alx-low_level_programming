@@ -6,7 +6,7 @@
 #include <string.h>
 
 /**
- * swap_int - Function that creates a file.
+ * create_file - Function that creates a file.
  *
  * @filename: name of file to be created.
  * @text_content: Output data to file.
@@ -19,6 +19,7 @@ int create_file(const char *filename, char *text_content)
 {
 /* Declaration of variables */
 	int fd;
+	ssize_t num_written;
 
 /* Code Statements */
 	if (!filename)
@@ -33,7 +34,7 @@ int create_file(const char *filename, char *text_content)
 
 	if (text_content)
 	{
-		ssize_t num_written = write(fd, text_content, strlen(text_content));
+		num_written = write(fd, text_content, strlen(text_content));
 		if (num_written == -1)
 		{
 			close(fd);
