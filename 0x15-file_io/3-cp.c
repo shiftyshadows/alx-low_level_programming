@@ -6,7 +6,7 @@
 #define BUF_SIZE 1024
 
 /**
- * main- function that appends text at the end of file.
+ * main- program that appends text at the end of file.
  *
  * @argc: Number of arguments passed to main progam
  * @argv: character pointer to character strings passed to
