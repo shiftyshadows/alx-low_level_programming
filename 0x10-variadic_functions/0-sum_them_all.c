@@ -1,0 +1,29 @@
+#include <stdarg.h>
+#include <stdio.h>
+#include "main.h"
+
+/**
+ * sum_them_all -
+ *
+ * @n: number of parameters
+ *
+ * Return: Integer value representing sum
+ */
+
+int sum_them_all(const unsigned int n, ...)
+{/* Declaration of variables */
+	int sum = 0;
+	unsigned int i;
+
+/* Code Statements */
+	if (n == 0)
+	{
+		return (0); }
+	va_list args;
+	va_start(args, n);
+	for (i = 0; i < n; ++i)
+	{
+		sum += va_arg(args, int); }
+	va_end(args);
+	return (sum);
+}
