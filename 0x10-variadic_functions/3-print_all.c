@@ -13,6 +13,10 @@ void print_all(const char * const format, ...)
 	int print_separator = 0;
 
 /* Code Statements */
+	if (format == NULL)
+	{
+		printf("\n");
+		return; }
 	va_start(args, format);
 	while (*f != '\0')
 	{
