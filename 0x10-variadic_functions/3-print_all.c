@@ -38,17 +38,14 @@ void print_all(const char * const format, ...)
 				printf("%f", va_arg(args, double));
 				print_separator = 1;
 				break;
-			case 's':
-				{
+			case 's':{
 					str = va_arg(args, const char *);
 					printf("%s", str ? str : "(nil)");
 					print_separator = 1;
 					break; }
 			default:
-				break;
-		}
-		f++;
-	}
+				break; }
+		f++; }
 	va_end(args);
 	printf("\n");
 }
