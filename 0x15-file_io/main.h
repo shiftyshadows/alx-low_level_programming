@@ -2,6 +2,9 @@
 #define MAIN_H
 
 #include <sys/types.h>
+#include <stdint.h> /* for uint16_t, uint32_t, and uint64_t */
+
+#define EI_NIDENT 16 /* The size of e_ident[] in the ELF header */
 
 /**
  * struct Elf64_Ehdr_s - ELF64 file header
