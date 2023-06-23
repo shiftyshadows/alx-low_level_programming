@@ -16,4 +16,4 @@ gcc -shared -o liball.so $object_files
 
 # Clean up the object files
 rm -f $object_files
-chmod +x create_liball.sh
+chmod +x 1-create_dynamic_lib.sh
