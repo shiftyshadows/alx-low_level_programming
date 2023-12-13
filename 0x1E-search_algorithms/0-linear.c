@@ -9,7 +9,8 @@
  * @size: number of elements in array.
  * @value: value to search for
  *
- * Return: Pointer if character is found, otherwise NULL
+ * Return: -1 if value not present in array, or array is NULL,
+ * otherwise the integer value is returned
  */
 
 int linear_search(int *array, size_t size, int value)
